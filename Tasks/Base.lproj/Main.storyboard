@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2GC-Ze-st9">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -19,6 +20,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="p6m-at-WGe">
                                 <rect key="frame" x="0.0" y="103" width="393" height="666"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="sectionIndexBackgroundColor" systemColor="systemGray6Color"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="Lob-eO-jtE" style="IBUITableViewCellStyleDefault" id="of7-aX-vXf">
                                         <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
@@ -41,7 +43,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGray6Color"/>
                         <constraints>
                             <constraint firstItem="p6m-at-WGe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="600-fM-c2c"/>
                             <constraint firstItem="p6m-at-WGe" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Akj-Ge-tNJ"/>
@@ -73,9 +75,26 @@
                     <view key="view" contentMode="scaleToFill" id="w64-6w-c4F">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CdG-PK-tFL">
+                                <rect key="frame" x="12" y="71" width="369" height="735"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Sn6-P6-eKs"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Sn6-P6-eKs" firstAttribute="trailing" secondItem="CdG-PK-tFL" secondAttribute="trailing" constant="12" id="Duf-A1-CbD"/>
+                            <constraint firstItem="CdG-PK-tFL" firstAttribute="leading" secondItem="Sn6-P6-eKs" secondAttribute="leading" constant="12" id="F8M-Rm-dx2"/>
+                            <constraint firstItem="CdG-PK-tFL" firstAttribute="top" secondItem="Sn6-P6-eKs" secondAttribute="top" constant="12" id="b3d-Cu-MwM"/>
+                            <constraint firstItem="Sn6-P6-eKs" firstAttribute="bottom" secondItem="CdG-PK-tFL" secondAttribute="bottom" constant="12" id="o71-Kt-56n"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="label" destination="CdG-PK-tFL" id="xW4-nx-Acj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Git-0C-hv4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -107,7 +126,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Nv-aM-3uk">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Do the laundry" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Nv-aM-3uk">
                                 <rect key="frame" x="20" y="79" width="353" height="52"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="52" id="LYY-Es-Asx"/>
@@ -117,7 +136,7 @@
                             </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="UPj-EB-frU"/>
-                        <color key="backgroundColor" systemColor="systemGray2Color"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="UPj-EB-frU" firstAttribute="trailing" secondItem="3Nv-aM-3uk" secondAttribute="trailing" constant="20" id="KZH-lN-Elb"/>
                             <constraint firstItem="3Nv-aM-3uk" firstAttribute="leading" secondItem="UPj-EB-frU" secondAttribute="leading" constant="20" id="OcY-qs-ehz"/>
@@ -137,8 +156,8 @@
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemGray2Color">
-            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

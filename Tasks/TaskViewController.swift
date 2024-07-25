@@ -9,9 +9,22 @@ import UIKit
 
 class TaskViewController: UIViewController {
 
+    @IBOutlet var label: UILabel!
+    
+    var task: String?
+    var currentPosition: Int?
+    var deleteTask: (() -> Void)?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        label.text = task
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Delete", style: .done, target: self, action: #selector(deleteTaskAction))
+    }
+    
+    @objc func deleteTaskAction() {
+        guard let deleteTask = deleteTask else { return }
+        deleteTask()
+        navigationController?.popViewController(animated: true)
     }
 }
